@@ -1,0 +1,20 @@
+// https://github.com/JasonkayZK/typescript-learn/tree/2-compile-options
+{
+    "include": [
+        "./src/**/*"
+    ],
+    "exclude": [
+        "./src/hello/**/*"
+    ],
+    "compilerOptions": {
+        "target": "ES6",
+        // "module": "ES6",
+        // "lib": []
+        "outDir": "dist",
+        "outFile": "./dist/app2.js",
+        "strict": false,
+        "alwaysStrict": false,
+        "noImplicitAny": false
+//        "allowUnreachableCode": true
+    }
+}
