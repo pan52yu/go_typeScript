@@ -1,0 +1,72 @@
+@bg-color: #b7d478;
+
+// 清除默认样式
+* {
+  margin: 0;
+  padding: 0;
+  // 改变盒子模型的计算方式 使得width和height包含padding和border
+  box-sizing: border-box;
+}
+
+body {
+  font: bold 20px "Courier";
+  // 设置小霸王游戏机一样的背景色
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#main {
+  width: 360px;
+  height: 420px;
+  background: @bg-color;
+  margin: 100px auto;
+  border: 10px solid black;
+  border-radius: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  // 游戏舞台
+  #stage {
+    width: 304px;
+    height: 304px;
+    border: 2px solid black;
+    position: relative;
+
+    #snake {
+      & > div {
+        width: 10px;
+        height: 10px;
+        background: black;
+        border: 1px solid @bg-color;
+      }
+    }
+
+    #food {
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      left: 40px;
+      top: 40px;
+      display: flex;
+      // 设置横轴为主轴 并且会自动换行
+      flex-flow: row wrap;
+      // 两侧对齐
+      justify-content: space-between;
+      align-content: space-between;
+
+      & > div {
+        width: 4px;
+        height: 4px;
+        background: black;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  #score-panel {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
